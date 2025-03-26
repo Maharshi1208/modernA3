@@ -1,9 +1,5 @@
 import paintRequiredCalculator from "./paintRequiredCalculator";
 
-describe("paint required calculator", () => {
-  test("should return expected result", () => {
-    const result = paintRequiredCalculator(50, 10);
-
-    expect(result).toEqual(5);
-  });
+test("calculates paint required correctly", () => {
+  expect(paintRequiredCalculator(100)).toBe(1);
 });

@@ -1,3 +1,4 @@
+cat > package.json << 'EOF'
 {
   "name": "seng8120-assignment3",
   "version": "1.0.0",
@@ -11,10 +12,10 @@
     "start": "node dist/index.js"
   },
   "devDependencies": {
-    "@jest/types": "^29.6.3",
-    "@types/jest": "^29.5.14",
+    "@types/jest": "^29.5.0",
     "jest": "^29.7.0",
-    "ts-jest": "^29.3.0",
-    "typescript": "^5.8.2"
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.0"
   }
 }
+EOF

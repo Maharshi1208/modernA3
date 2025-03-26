@@ -1,17 +1,17 @@
-import type { Config } from 'jest';
+import type { Config } from '@jest/types';
 
-const config: Config = {
-  roots: [ "<rootDir>" ],
-  transform: { ".(ts|tsx)": "ts-jest" },
-  testRegex: ".*\\.(test|spec)\\.(ts|tsx|js)$",
-  testPathIgnorePatterns: [
-    "/node_modules/",
-    ".*\\.snapshots\\.ts",
-    "/dist/",
-    "./flatfileDirectory"
+const config: Config.InitialOptions = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  moduleFileExtensions: ['ts', 'js', 'json'],
+  transform: {
+    '^.+\\.ts$': 'ts-jest',
+  },
+  testMatch: [
+    '**/*.test.ts',
+    '**/*.spec.ts'
   ],
-  verbose: true,
-  coverageProvider: 'v8',
-}
- 
+  roots: ['<rootDir>/src', '<rootDir>/test'],
+};
+
 export default config;

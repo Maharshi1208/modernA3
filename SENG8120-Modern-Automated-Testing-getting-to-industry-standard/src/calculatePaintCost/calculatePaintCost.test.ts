@@ -39,4 +39,16 @@ describe('calculatePaintCost', () => {
     expect(calculatePaintCost(Infinity, 5)).toBeNaN();
     expect(calculatePaintCost(5, NaN)).toBeNaN();
   });
+  test('should round to 2 decimal places for currency values', () => {
+    expect(calculatePaintCost(3.333, 3)).toBeCloseTo(10.0); // 3.333 * 3 = 9.999 → 10.0
+    expect(calculatePaintCost(2.222, 4.444)).toBeCloseTo(9.88, 2); // 2.222 * 4.444 = 9.876568 → 9.88
+  });
+  test('should handle string-number inputs if designed to', () => {
+    // Only add if your function is designed to handle string inputs
+    expect(calculatePaintCost('10' as any, '5' as any)).toBe(50);
+  });
+  test('should provide specific error messages', () => {
+    expect(() => calculatePaintCost(-1, 5)).toThrow('Paint required cannot be negative');
+    expect(() => calculatePaintCost(5, -1)).toThrow('Cost per liter cannot be negative');
+  });
 });

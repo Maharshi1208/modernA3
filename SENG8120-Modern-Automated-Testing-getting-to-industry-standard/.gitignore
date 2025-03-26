@@ -1,0 +1,4 @@
+node_modules/
+flatfileDirectory/*
+.DS_Store
+dist/
